@@ -1,0 +1,65 @@
+:root {
+    --colour1: #0A0D1A;
+    --colour2: #1F1F33;
+    --colour3: #1A1122;
+    --colour4: #2B1D39;
+    --colour5: #5B5364;
+
+    --text_colour1: #637e91;
+    --text_colour2: #97D4FC;
+    --text_colour3: #e4f4ff;
+}
+
+
+.colour_1 {
+    background-color: var(--colour1);
+    border-color: var(--colour1);
+}
+
+.colour_2 {
+    background-color: var(--colour2);
+    border-color: var(--colour2);
+}
+
+.colour_3 {
+    background-color: var(--colour3);
+    border-color: var(--colour3);
+}
+
+.colour_4 {
+    background-color: var(--colour4);
+    border-color: var(--colour4);
+}
+
+.colour_5 {
+    background-color: var(--colour5);
+}
+
+.colour_1_text {
+    color: var(--text_colour1);
+}
+
+.colour_2_text {
+    color: var(--text_colour2);
+}
+
+.colour_3_text {
+    color: var(--text_colour3);
+}
+
+input[type='text']::placeholder,
+textarea::placeholder {
+    color: var(--text_colour1);
+}
+
+.darker {
+    filter: brightness(70%);
+}
+
+.lighter {
+    filter: brightness(130%);
+}
+
+#theme_child {
+    display: none;
+}

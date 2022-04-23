@@ -1,0 +1,56 @@
+@keyframes fade_out_anim {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes fade_in_anim {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fade_in_left {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+
+.fade_out {
+    animation-name: fade_out_anim;
+    animation-duration: .25s;
+    transform-origin: 50% 0%;
+}
+
+.fade_in {
+    animation-name: fade_in_anim;
+    animation-duration: .25s;
+    transform-origin: 50% 0%;
+
+}
+
+.fade_in_left {
+    animation-name: fade_in_left;
+    animation-duration: .25s;
+    transform-origin: 0% 50%;
+}
+
+.fade_out_left {
+    animation-name: fade_in_left;
+    animation-direction: reverse;
+    animation-duration: .25s;
+    transform-origin: 0% 50%;
+}

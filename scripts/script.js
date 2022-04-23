@@ -1,4 +1,4 @@
-var scripts = ["colour_themes.js", "other.js", "drag.js", "save_load.js"];
+var scripts = ["scripts/colour_themes.js", "scripts/other.js", "scripts/drag.js", "scripts/save_load.js"];
 
 scripts.forEach((script) =>
 {

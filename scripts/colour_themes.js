@@ -26,15 +26,15 @@ const themes =
         },
         {
             Name: "Inferno",
-            Col1: "#03071E",
-            Col2: "#370617",
-            Col3: "#6A040F",
-            Col4: "#9D0208",
-            Col5: "#D00000",
+            Col1: "#9D0208",
+            Col2: "#DC2F02",
+            Col3: "#F48C06",
+            Col4: "#FAA307",
+            Col5: "#FFBA08",
 
-            TextCol1: "#DC2F02",
-            TextCol2: "#F48C06",
-            TextCol3: "#FFBA08",
+            TextCol1: "#6A040F",
+            TextCol2: "#370617",
+            TextCol3: "#03071E",
         },
         {
             Name: "Mossy Slate",
@@ -50,15 +50,39 @@ const themes =
         },
         {
             Name: "Vaporwave",
-            Col1: "#360B98",
-            Col2: "#7909C3",
-            Col3: "#F72585",
-            Col4: "#42C7F0",
-            Col5: "#17BEBB",
+            Col1: "#2D00F7",
+            Col2: "#6A00F4",
+            Col3: "#8900F2",
+            Col4: "#A100F2",
+            Col5: "#B100E8",
 
-            TextCol1: "#FAE275",
-            TextCol2: "#FAE275",
-            TextCol3: "#FAE275",
+            TextCol1: "#7A007A",
+            TextCol2: "#DB00B6",
+            TextCol3: "#E500A4",
+        },
+        {
+            Name: "Sterile (Light)",
+            Col1: "#F8F9FA",
+            Col2: "#DEE2E6",
+            Col3: "#CED4DA",
+            Col4: "#ADB5BD",
+            Col5: "#8D959D",
+
+            TextCol1: "#495057",
+            TextCol2: "#343A40",
+            TextCol3: "#212529",
+        },
+        {
+            Name: "Sterile (Dark)",
+            Col1: "#212529",
+            Col2: "#495057",
+            Col3: "#6C757D",
+            Col4: "#8D959D",
+            Col5: "#ADB5BD",
+
+            TextCol1: "#CED4DA",
+            TextCol2: "#DEE2E6",
+            TextCol3: "#F8F9FA",
         }
     ];
 

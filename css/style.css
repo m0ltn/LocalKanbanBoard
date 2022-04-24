@@ -4,6 +4,15 @@
 @import url(colours.css);
 
 
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+}
+
+input {
+    border: none;
+}
+
 #name-label {
     position: absolute;
     bottom: 0;

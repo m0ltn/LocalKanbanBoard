@@ -1,6 +1,6 @@
 :root {
     --colour1: #0A0D1A;
-    --colour2: #1F1F33;
+    --colour2: #3200bb;
     --colour3: #1A1122;
     --colour4: #2B1D39;
     --colour5: #5B5364;
@@ -62,4 +62,8 @@ textarea::placeholder {
 
 #theme_child {
     display: none;
+}
+
+#theme_parent {
+    border: var(--colour4) solid 2px;
 }

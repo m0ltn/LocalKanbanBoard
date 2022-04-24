@@ -72,7 +72,7 @@ function SaveData()
                 };
 
                 var piecesParent = task.querySelector(".task_pieces_parent");
-                var pieces = piecesParent.querySelectorAll(".task_piece:not(.TEMPLATE)");
+                var pieces = piecesParent.querySelectorAll(".task_piece");
 
                 pieces.forEach(piece =>
                 {

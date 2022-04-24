@@ -2,9 +2,6 @@
 <html lang="en">
 
 <head>
-    <script>
-
-    </script>
     <link rel="stylesheet" href="css/style.css">
     <script src="scripts/script.js"></script>
     <title id="page_title">Project</title>
@@ -12,7 +9,9 @@
 
 <body class="colour_1">
     <div class="navbar fade_in_left ">
-        <div id="name-label" class="colour_3"><label class="colour_3_text">Board by Moltn : <a href="https://github.com/moltenmachine/LocalKanbanBoard" target="_blank" rel="noopener noreferrer" class="colour_2_text">https://github.com/m0ltn/LocalKanbanBoard</a></label></div>
+        <div id="name-label" class="colour_3"><label class="colour_3_text">Board by Moltn : <a
+                    href="https://github.com/m0ltn/LocalKanbanBoard" target="_blank" rel="noopener noreferrer"
+                    class="colour_2_text">https://github.com/m0ltn/LocalKanbanBoard</a></label></div>
         <label>
             <input type="text" placeholder="Project Board" class="navbar-text colour_2 colour_2_text" id="board_title"
                 oninput="AutoResizeWidth(this)">
@@ -22,12 +21,12 @@
             style="background-color: rgb(0, 194, 0); height: auto; margin-left: 20px;" class="">+</button>
 
         <div class="dropdown" style="margin-left: 0; margin-right: 20px;">
-        
+
             <button class="dropdown">Theme</button>
             <div class="dropdown-content colour_2 colour_1_text" id="theme_parent" style="width: 100%;">
-                <a id="theme_child" >TEST THEME</a>
+                <a id="theme_child" style="user-select: none;">TEST THEME</a>
             </div>
-        
+
         </div>
 
         <div class="dropdown" style="margin-left: auto; margin-right: 0;">
@@ -45,89 +44,118 @@
         </div>
     </div>
     <div class="container animated" style="height: 100%;">
-        
+
         <div id="catagory_parent">
-            <div class="dropzone catagory colour_2" id="catagory_root" style="display: none; position: relative;"
-                draggable="true">
 
-                <button
-                    style="background-color:green; position: absolute; right: 0; top: 0; font-size: 25px; padding: 4px 8px;"
-                    onclick="CreateTask(GetClosestCatagory(this))">+</button>
-                <input type="text" placeholder="Catagory" class="catagory_title dark-hover colour_2_text">
-                <button
-                    style="background-color:red; position: absolute; left: 0; top: 0; padding: 4px 8px; font-size: 25px;"
-                    onclick="DeleteCatagory(GetClosestCatagory(this))">X</button>
+        </div>
+    </div>
 
-                <div class="task_parent">
-                        <div class="task colour_3" id="task_root" style="display: none;" draggable="true">
-                            <div class="task_priority_tag" onmouseleave="ResetPriority(GetClosestTask(this))" >
-                                <p onclick="UpdatePriority(GetClosestTask(this),'no_priority')" class="no_priority" onmouseenter="SetPriorityVisual(this)">None</p>
-                                <p onclick="UpdatePriority(GetClosestTask(this),'low_priority')" class="low_priority" onmouseenter="SetPriorityVisual(this)">Low</p>
-                                <p onclick="UpdatePriority(GetClosestTask(this),'med_priority')" class="med_priority" onmouseenter="SetPriorityVisual(this)">Medium</p>
-                                <p onclick="UpdatePriority(GetClosestTask(this),'high_priority')" class="high_priority" onmouseenter="SetPriorityVisual(this)">High</p>
-                            </div>
-                            <div class="task_options">
-                                <button>☰</button>
-                                <div class="task_options_menu">
-                                    <button onclick="AddTaskChecklist(GetClosestTask(this),'',null)" class="hide_text">Add Checklist</button>
-                                    <button onclick="AddTaskNote(GetClosestTask(this),'')" class="hide_text" >Add Note</button>
-                                    <button onclick="DeleteTask(GetClosestTask(this))" class="hide_text" style="background-color: red;">Delete</button>
-                                </div>
-                            </div>
 
-                            <label class="checkbox-container" style="position: absolute; top: 0; left: 15px;">
-                                <input type="checkbox" onchange="SetTaskFinished(this)" class="task_completed_checkbox colour_text_3">
-                                <span class="checkmark"></span>
-                            </label>
-
-                           <div class="task_content">
-                            <input type="text" placeholder="Title" class="titleInput task_title colour_3_text">
-                            <textarea type=" text" placeholder="Note" class="textInput auto_resize_text_area task_text colour_3_text"
-                            oninput="autoResizeHeight(this)"></textarea>
-
-                            <hr class="colour_2">
-                           <div class="task_pieces_parent colour_3_text" >
-                               
-                            <div class="task_piece_note task_piece" id="task_note_root" style="display: none;">
-                                <div class="task_piece_options">
-                                    <button>☰</button>
-                                    <div class="task_piece_options_menu">
-                                        <button onclick="DeleteTaskPiece(GetClosestPiece(this))" class="hide_text" style="background-color: red;">Remove Note</button>
-                                    </div>
-                                </div>
-                                <textarea type=" text" placeholder="Note" class="textInput auto_resize_text_area task_note_text colour_3_text"
-                                    oninput="autoResizeHeight(this)"></textarea>
-                                <hr class="colour_2">
-                            </div>
-
-                            <div class="task_piece_checklist task_piece" style="display: none;" id="task_checklist_root">
-
-                                <div class="task_piece_options">
-                                    <button>☰</button>
-                                    <div class="task_piece_options_menu">
-                                        <button onclick="DeleteTaskPiece(GetClosestPiece(this))" class="hide_text" style="background-color: red;">Remove Checklist</button>
-                                    </div>
-                                </div>
-
-                                <input type="text" placeholder="Title" class="titleInput task_checklist_title colour_3_text">
-                                <button onclick="AddChecklistItem(this.parentNode.querySelector('.task_checklist_parent'));" class="task_checklist_add_btn">+</button>
-
-                                <div class="task_checklist_parent">
-                                    <div class="task_checklist_item dark-hover" id="task_checklist_item_root" style="display: none;">
-                                        <button class="task_checklist_toggle" onclick="ToggleElementDone(this.parentNode)">✔</button>
-                                        <input type="text" placeholder="Item" class="task_checklist_text colour_3_text">
-                                        <button class="task_checklist_delete" onclick="DeleteChecklistItem(this.parentNode);">-</button>
-                                    </div>
-                                </div>
-                                <hr class="colour_2">
-                            </div>
-                        </div>
-                           </div>
+    <div style="display: none;" id="template_parent">
+        <div id="task_template">
+            <div class="task colour_3" draggable="true">
+                <div class="task_priority_tag" onmouseleave="ResetPriority(GetClosestTask(this))">
+                    <p onclick="UpdatePriority(GetClosestTask(this),'no_priority')" class="no_priority"
+                        onmouseenter="SetPriorityVisual(this)">None</p>
+                    <p onclick="UpdatePriority(GetClosestTask(this),'low_priority')" class="low_priority"
+                        onmouseenter="SetPriorityVisual(this)">Low</p>
+                    <p onclick="UpdatePriority(GetClosestTask(this),'med_priority')" class="med_priority"
+                        onmouseenter="SetPriorityVisual(this)">Medium</p>
+                    <p onclick="UpdatePriority(GetClosestTask(this),'high_priority')" class="high_priority"
+                        onmouseenter="SetPriorityVisual(this)">High</p>
+                </div>
+                <div class="task_options">
+                    <button class="colour_3_text">☰</button>
+                    <div class="task_options_menu">
+                        <button onclick="AddTaskChecklist(GetClosestTask(this),'',null)" class="hide_text">Add
+                            Checklist</button>
+                        <button onclick="AddTaskNote(GetClosestTask(this),'')" class="hide_text">Add Note</button>
+                        <button onclick="DeleteTask(GetClosestTask(this))" class="hide_text"
+                            style="background-color: red;">Delete</button>
                     </div>
                 </div>
 
+                <label class="checkbox-container" style="position: absolute; top: 0; left: 15px;">
+                    <input type="checkbox" onchange="SetTaskFinished(this)"
+                        class="task_completed_checkbox colour_text_3" />
+                    <span class="checkmark"></span>
+                </label>
+
+                <div class="task_content">
+                    <input type="text" placeholder="Title" class="titleInput task_title colour_3_text" />
+                    <textarea type=" text" placeholder="Note"
+                        class="textInput auto_resize_text_area task_text colour_3_text"
+                        oninput="autoResizeHeight(this)"></textarea>
+
+                    <hr class="colour_2" />
+                    <div class="task_pieces_parent colour_3_text"> </div>
+                </div>
             </div>
         </div>
+
+        <div id="task_note_template">
+            <div class="task_piece_note task_piece">
+                <div class="task_piece_options">
+                    <button class="colour_3_text">☰</button>
+                    <div class="task_piece_options_menu">
+                        <button onclick="DeleteTaskPiece(GetClosestPiece(this))" class="hide_text"
+                            style="background-color: red;">Remove Note</button>
+                    </div>
+                </div>
+                <textarea type=" text" placeholder="Note"
+                    class="textInput auto_resize_text_area task_note_text colour_3_text"
+                    oninput="autoResizeHeight(this)"></textarea>
+                <hr class="colour_2" />
+            </div>
+        </div>
+
+        <div id="task_checklist_template">
+            <div class="task_piece_checklist task_piece">
+                <div class="task_piece_options">
+                    <button class="colour_3_text">☰</button>
+                    <div class="task_piece_options_menu">
+                        <button onclick="DeleteTaskPiece(GetClosestPiece(this))" class="hide_text"
+                            style="background-color: red;">Remove Checklist</button>
+                    </div>
+                </div>
+
+                <input type="text" placeholder="Title" class="titleInput task_checklist_title colour_3_text" />
+                <button onclick="AddChecklistItem(this.parentNode.querySelector('.task_checklist_parent'));"
+                    class="task_checklist_add_btn">+</button>
+
+                <div class="task_checklist_parent"> </div>
+                <hr class="colour_2" />
+            </div>
+        </div>
+
+        <div id="task_checklist_item_template">
+            <div class="task_checklist_item dark-hover">
+                <button class="task_checklist_toggle colour_5" onclick="ToggleElementDone(this.parentNode)">✔</button>
+                <input type="text" placeholder="Item" class="task_checklist_text colour_3_text" />
+                <button class="task_checklist_delete colour_5" onclick="DeleteChecklistItem(this.parentNode);">-</button>
+            </div>
+        </div>
+
+        <div id="catagory_template">
+            <div class="dropzone catagory colour_2" style="position: relative;" draggable="true">
+                <input type="text" placeholder="Catagory" class="catagory_title dark-hover colour_2_text" />
+
+                <div class="task_piece_options">
+                    <button class="colour_3_text">☰</button>
+                    <div class="task_piece_options_menu">
+                        <button onclick="CreateTask(GetClosestCatagory(this))" class="hide_text" style="background-color: green;">Add</button>
+                        <button onclick="DeleteCatagory(GetClosestCatagory(this))" class="hide_text" style="background-color: red;">Delete</button>
+                    </div>
+                </div>
+
+                <div class="task_parent"></div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
     </div>
 </body>
 

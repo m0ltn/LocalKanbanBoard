@@ -7,7 +7,6 @@ scripts.forEach((script) =>
 	document.head.appendChild(element);
 });
 
-var activeMenu = null;
 var templateParent = null;
 
 window.onload = function (e)
@@ -16,35 +15,13 @@ window.onload = function (e)
 	LoadData();
 };
 
-
-window.onclick = function (event)
+function OnTemplatesLoaded(frame)
 {
-	if (activeMenu != null && !IsChildOf(event.target, activeMenu.parentNode))
-	{
-		activeMenu.classList.remove("show");
-		activeMenu = null;
-		menuInitiator = null;
-	}
-};
+	var innerDoc = frame.contentDocument || frame.contentWindow.document;
+	console.log(innerDoc);
+	templateParent = innerDoc.body;
 
-
-function ShowMenu(task, selector)
-{
-	var menu = task.querySelector(selector);
-
-	if (activeMenu != null)
-	{
-		activeMenu.classList.remove("show");
-		activeMenu = null;
-
-		if (activeMenu == menu)
-		{
-			return;
-		}
-	}
-
-	activeMenu = menu;
-	menu.classList.add("show");
+	LoadData();
 }
 
 

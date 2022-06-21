@@ -9,7 +9,7 @@ Features:
 - priority based tags (no order filtering)
 - drag & drop movement and reodering of tasks and groups
 - complete indepency from any cloud services
-- messy code :)
+- code is all over the place but i'v tried somewhat to clean it
 
 NOTE this site was created in my free time on the brave browser so testing for other browsers is basically noexistent so expect them to not work fully.
 Feel free to use/modify to your hearts content, Pull requests welcome
